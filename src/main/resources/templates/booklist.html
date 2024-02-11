@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Book List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" /> 
+
+
+</head>
+
+<body>
+    <h1>Booklist</h1>
+    <p>
+        <table class="table table-striped">
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>author</th>
+                <th>publicationYear</th>
+                <th>isbn</th>
+                <th>price</th>
+                <th>Action</th> 
+            </tr>
+
+            <tr th:each="book : ${books}">
+                <td>
+                    <span th:text="${book.id}">id</span>
+                </td>
+                <td>
+                    <span th:text="${book.title}">title</span>
+                </td>
+                <td>
+                    <span th:text="${book.author}">author</span>
+                </td>
+                <td>
+                    <span th:text="${book.publicationYear}">publicationYear</span>
+                </td>
+                <td>
+                    <span th:text="${book.isbn}">isbn</span>
+                </td>
+                <td>
+                    <span th:text="${book.price}">price</span>
+                </td>
+                <td>
+                    <!-- poisto -->
+                    <form th:action="@{/delete/{bookId}(bookId=${book.id})}" method="post">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+
+                    </form>
+                </td>
+                <td>
+                    <!-- muokkaus -->
+                    <a th:href="@{/edit/{bookId}(bookId=${book.id})}">Edit</a>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <p><a th:href="@{/addbook}" class="btn btn-success">Add a new book</a></p>
+
+</body>
+
+</html>
