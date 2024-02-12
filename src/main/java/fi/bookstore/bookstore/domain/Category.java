@@ -26,7 +26,7 @@ public class Category {
         this.name = name;
     }
 
-    // getter
+    // getit
     public Long getCategoryId() {
         return categoryId;
     }
@@ -35,7 +35,12 @@ public class Category {
         return name;
     }
 
-    // setter
+    @Override
+    public String toString() {
+        return "Category [categoryId=" + categoryId + ", name=" + name + "]";
+    }
+
+    // setit
     public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
     }
