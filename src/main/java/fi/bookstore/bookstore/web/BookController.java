@@ -19,13 +19,13 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
 
-    // http://localhost:8080/index
+    
     @RequestMapping(value="/index", method=RequestMethod.GET)
     public String indexPage() {
         return "index"; //index.html
     }
     
-    // http://localhost:8080/booklist
+    
     @RequestMapping(value = "/booklist", method=RequestMethod.GET)
     public String getBooks(Model model) {
 
