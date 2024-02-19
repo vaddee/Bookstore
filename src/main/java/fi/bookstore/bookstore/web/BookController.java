@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import fi.bookstore.bookstore.domain.Book;
 import fi.bookstore.bookstore.domain.BookRepository;
+import fi.bookstore.bookstore.domain.CategoryRepository;
 
 
 @Controller
@@ -18,6 +19,9 @@ public class BookController {
 
     @Autowired
     private BookRepository bookRepository;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     
     @RequestMapping(value="/index", method=RequestMethod.GET)
@@ -41,6 +45,8 @@ public class BookController {
 
         
         model.addAttribute("book", new Book()); 
+
+        model.addAttribute("categories", categoryRepository.findAll());
 
         
         return "addbook"; // .html

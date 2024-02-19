@@ -46,7 +46,7 @@
                 </td>
 
                 <td>
-                    <span th:text="${book.Category.name}">Category</span> 
+                    <span th:text="${book.category.name}">Category</span> 
                 </td>
                 <td>
                     <!-- poisto -->
@@ -63,6 +63,7 @@
         </table>
     </p>
     <p><a th:href="@{/addbook}" class="btn btn-success">Add a new book</a></p>
+    <p><a th:href="@{/categorylist}" class="btn btn-success">Show categories</a></p>
 
 </body>
 
