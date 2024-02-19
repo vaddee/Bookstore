@@ -41,6 +41,8 @@ public class BookController {
 
         
         model.addAttribute("book", new Book()); 
+
+        
         return "addbook"; // .html
     }
 

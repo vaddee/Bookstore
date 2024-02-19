@@ -20,7 +20,9 @@
                 <th>publicationYear</th>
                 <th>isbn</th>
                 <th>price</th>
-                <th>Action</th> 
+                <th>Category</th>  
+                <th>Action</th>
+               
             </tr>
 
             <tr th:each="book : ${books}">
@@ -41,6 +43,10 @@
                 </td>
                 <td>
                     <span th:text="${book.price}">price</span>
+                </td>
+
+                <td>
+                    <span th:text="${book.Category.name}">Category</span> 
                 </td>
                 <td>
                     <!-- poisto -->

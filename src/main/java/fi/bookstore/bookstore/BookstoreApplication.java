@@ -38,9 +38,9 @@ public class BookstoreApplication {
 
 
 			
-			Book book1 = new Book("Taru Sormusten Herrasta", "JJ.Tolken", 2000, "344141", 20.5);
-			Book book2 = new Book("vares", "Jaska Jokunen", 2011, "322213", 15.4);
-			Book book3 = new Book("Valtaistuinpeli", "George RR Martin", 1991, "5555666", 40.4);
+			Book book1 = new Book("Taru Sormusten Herrasta", "JJ.Tolken", 2000, "344141", 20.5, category1);
+			Book book2 = new Book("vares", "Jaska Jokunen", 2011, "322213", 15.4, category2);
+			Book book3 = new Book("Valtaistuinpeli", "George RR Martin", 1991, "5555666", 40.4, category3);
 			
 		
 			bookRepository.save(book1);
